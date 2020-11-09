@@ -3,7 +3,7 @@ library(tidyverse)
 library(here)
 library(haven)
 
-maddison <- read_dta(here("data/mpd2020.dta"))
+maddison <- read_dta(here("data/raw/mpd2020.dta"))
 
 maddison_red <- maddison %>%
   filter(
@@ -18,7 +18,8 @@ maddison_red <- maddison %>%
     ) +
   theme_bw() + theme(
     panel.border = element_blank(),
-    axis.line = element_line(), legend.title = element_blank(), 
+    axis.line = element_line(), 
+    legend.title = element_blank(), 
     legend.position = "bottom"
   )
 maddison_red
